@@ -1,0 +1,12 @@
+services:
+  saic-python-api-proxy:
+    build:
+      context: .
+    image: "saicismartapi/saic-python-api-proxy:latest"
+    container_name: "saic-python-api-proxy"
+    ports:
+      - "8080:8080"
+    environment:
+      - SAIC_REST_URI=${SAIC_REST_URI}
+      - SAIC_REGION=${SAIC_REGION}
+      - SAIC_TENANT_ID=${SAIC_TENANT_ID}
